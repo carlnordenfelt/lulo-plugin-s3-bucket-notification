@@ -29,6 +29,7 @@ The Custom Resource Lambda requires the following permissions for this plugin to
   "Statement": [
     {
       "Action": [
+        "s3:GetBucketNotification",
         "s3:PutBucketNotification"
       ],
       "Effect": "Allow",

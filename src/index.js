@@ -84,6 +84,9 @@ pub.delete = function (event, _context, callback) {
     configurationHelper.getBucketNotificationConfiguration(event.ResourceProperties.Bucket,
         function (error, configurations) {
             if (error) {
+                if (error.code === 'NoSuchBucket') {
+                    return callback();
+                }
                 return callback(error);
             }
             configurations = configurationHelper.removeConfigurations(configurations,
