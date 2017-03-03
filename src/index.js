@@ -90,7 +90,7 @@ pub.delete = function (event, _context, callback) {
                 return callback(error);
             }
             configurations = configurationHelper.removeConfigurations(configurations,
-                event.ResourceProperties.NotificationConfigurations);
+                event.ResourceProperties.NotificationConfiguration);
             configurationHelper.putBucketNotificationConfiguration(event.ResourceProperties.Bucket, configurations,
                 function (error) {
                     return callback(error);
