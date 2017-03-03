@@ -236,6 +236,15 @@ describe('Index unit tests', function () {
                 done();
             });
         });
+        it('should not fail due to NoSuchBucket error', function (done) {
+            getBucketNotificationConfigurationStub.yields({ code: 'NoSuchBucket' });
+            subject.delete(event, {}, function (error) {
+                expect(error).to.equal(undefined);
+                expect(getBucketNotificationConfigurationStub.calledOnce).to.equal(true);
+                expect(putBucketNotificationConfigurationStub.called).to.equal(false);
+                done();
+            });
+        });
         it('should fail due to put error', function (done) {
             putBucketNotificationConfigurationStub.yields('putError');
             subject.delete(event, {}, function (error) {

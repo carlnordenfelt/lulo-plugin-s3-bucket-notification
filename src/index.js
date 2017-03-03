@@ -55,7 +55,7 @@ pub.create = function (event, _context, callback) {
                 return callback(error);
             }
             configurations = configurationHelper.addConfigurations(configurations,
-                event.ResourceProperties.NotificationConfigurations);
+                event.ResourceProperties.NotificationConfiguration);
             configurationHelper.putBucketNotificationConfiguration(event.ResourceProperties.Bucket, configurations,
                 function (error) {
                     return callback(error);
@@ -70,9 +70,9 @@ pub.update = function (event, _context, callback) {
                 return callback(error);
             }
             configurations = configurationHelper.removeConfigurations(configurations,
-                event.OldResourceProperties.NotificationConfigurations);
+                event.OldResourceProperties.NotificationConfiguration);
             configurations = configurationHelper.addConfigurations(configurations,
-                event.ResourceProperties.NotificationConfigurations);
+                event.ResourceProperties.NotificationConfiguration);
             configurationHelper.putBucketNotificationConfiguration(event.ResourceProperties.Bucket, configurations,
                 function (error) {
                     return callback(error);
