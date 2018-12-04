@@ -29,7 +29,7 @@
   },
   "homepage": "https://github.com/carlnordenfelt/lulo-plugin-s3-bucket-notification",
   "dependencies": {
-    "lodash": "4.17.4"
+    "lodash": "4.17.5"
   },
   "devDependencies": {
     "aws-sdk": "*",
