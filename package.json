@@ -1,6 +1,6 @@
 {
   "name": "lulo-plugin-s3-bucket-notification",
-  "version": "1.0.5",
+  "version": "1.1.0",
   "scripts": {
     "lint": "eslint --max-warnings 0 src tests",
     "test-unit": "NODE_ENV=TEST istanbul cover --include-all-sources true -x src/**/cfn-response.js -i \"src/**/*.js\" node_modules/.bin/_mocha ./tests/unit -- --recursive",
@@ -29,10 +29,10 @@
   },
   "homepage": "https://github.com/carlnordenfelt/lulo-plugin-s3-bucket-notification",
   "dependencies": {
-    "aws-sdk": "2.7.26",
     "lodash": "4.17.4"
   },
   "devDependencies": {
+    "aws-sdk": "*",
     "chai": "3.5.0",
     "coveralls": "2.11.9",
     "eslint": "3.0.1",
