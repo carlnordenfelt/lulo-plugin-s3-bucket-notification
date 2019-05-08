@@ -1,5 +1,5 @@
 {
-    "baseConfig": true,
+    "extends": "eslint:recommended",
     "env": {
         "node": true
     },
